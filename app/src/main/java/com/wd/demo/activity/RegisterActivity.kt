@@ -1,8 +1,9 @@
-package com.wd.demo
+package com.wd.demo.activity
 
 import android.app.Activity
 import android.os.Bundle
 import com.blankj.utilcode.util.ToastUtils
+import com.wd.demo.R
 import com.wd.demo.bean.RegisterBean
 import com.wd.demo.mvp.contract.RegisterContract
 import com.wd.demo.mvp.presenter.RegisterPresenter

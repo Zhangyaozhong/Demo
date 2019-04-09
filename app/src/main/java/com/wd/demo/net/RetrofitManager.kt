@@ -37,6 +37,7 @@ class RetrofitManager private constructor() {
                 .readTimeout(DEFAULT_REDA_TIME_OUT, TimeUnit.SECONDS)
                 .writeTimeout(DEFAULT_REDA_TIME_OUT, TimeUnit.SECONDS)
                 .connectTimeout(DEFAULT_TIME_OUT, TimeUnit.SECONDS)
+                .addInterceptor(HeadIntercept())
                 .sslSocketFactory(RxUtils.createSSLSocketFactory())
                 .build()
         return Retrofit.Builder()

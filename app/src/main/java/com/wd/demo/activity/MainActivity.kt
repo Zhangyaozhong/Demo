@@ -1,10 +1,12 @@
-package com.wd.demo
+package com.wd.demo.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.blankj.utilcode.util.SPUtils
 import com.blankj.utilcode.util.ToastUtils
+import com.wd.demo.R
 import com.wd.demo.bean.LoginBean
 import com.wd.demo.mvp.contract.LoginContract
 import com.wd.demo.mvp.presenter.LoginPresenter
@@ -15,6 +17,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, LoginContract.IL
     var loginPresenter = LoginPresenter()
     override fun loginSuccess(loginBean: LoginBean) {
         ToastUtils.showShort(loginBean.message)
+        if (loginBean.status == "0000") {
+//            登录成功后将userId、sessionId存到sp
+            SPUtils.getInstance().put("userId", loginBean.result.userId);
+            SPUtils.getInstance().put("sessionId", loginBean.result.sessionId);
+            var intent = Intent()
+            startActivity(intent.setClass(this, HomeActivity::class.java))
+        }
     }
 
     override fun error(msg: String) {

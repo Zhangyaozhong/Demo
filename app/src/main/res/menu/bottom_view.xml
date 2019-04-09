@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_information"
+        android:icon="@drawable/home_information_selector"
+        android:title="@string/information" />
+    <item
+        android:id="@+id/item_message"
+        android:icon="@drawable/home_message_selector"
+        android:title="@string/message" />
+    <item
+        android:id="@+id/item_community"
+        android:icon="@drawable/home_community_selector"
+        android:title="@string/community" />
+
+</menu>
